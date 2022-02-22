@@ -446,3 +446,167 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 42ms (Views: 31.0ms | ActiveRecord: 1.1ms | Allocations: 3054)
 
 
+Started GET "/blogs" for 127.0.0.1 at 2022-02-22 23:54:14 +0100
+  
+SyntaxError (/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+  get 'blog/:id', to: 'blogs#show'
+      ^
+/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+  get 'blog/:id', to: 'blogs#show'
+                ^
+/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2022-02-22 23:55:08 +0100
+  
+SyntaxError (/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+  get 'blog/:id'
+      ^
+):
+  
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started GET "/blogs" for 127.0.0.1 at 2022-02-23 00:01:47 +0100
+  
+SyntaxError (/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+  get 'blogs/:id', to: 'blogs#show'
+      ^
+/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+  get 'blogs/:id', to: 'blogs#show'
+                 ^
+/home/emmy/Desktop/the_odin_project/blog-wror/config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+config/routes.rb:4: syntax error, unexpected ',', expecting `end'
+config/routes.rb:10: syntax error, unexpected `end', expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2022-02-23 00:05:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (5.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 75.3ms | Allocations: 8070)
+  Rendered layout layouts/application.html.erb (Duration: 389.5ms | Allocations: 42216)
+Completed 200 OK in 437ms (Views: 376.6ms | ActiveRecord: 27.1ms | Allocations: 48971)
+
+
+Started GET "/blogs/1" for 127.0.0.1 at 2022-02-23 00:05:49 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (1.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 261)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 2679)
+Completed 200 OK in 131ms (Views: 56.2ms | ActiveRecord: 3.1ms | Allocations: 5680)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-23 00:06:01 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (1.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 983)
+  Rendered layout layouts/application.html.erb (Duration: 68.4ms | Allocations: 3238)
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 1.5ms | Allocations: 3530)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-23 00:06:08 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (2.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 66.6ms | Allocations: 3216)
+Completed 200 OK in 71ms (Views: 66.4ms | ActiveRecord: 2.8ms | Allocations: 3503)
+
+
+Started GET "/blogs/2" for 127.0.0.1 at 2022-02-23 00:06:16 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (2.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 2252)
+Completed 200 OK in 42ms (Views: 30.3ms | ActiveRecord: 2.4ms | Allocations: 3051)
+
+
+Started GET "/blogs/2" for 127.0.0.1 at 2022-02-23 00:06:33 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 2263)
+Completed 200 OK in 54ms (Views: 33.1ms | ActiveRecord: 1.3ms | Allocations: 3043)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-23 00:08:08 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 2529)
+  Rendered layout layouts/application.html.erb (Duration: 170.3ms | Allocations: 16262)
+Completed 200 OK in 185ms (Views: 163.3ms | ActiveRecord: 12.6ms | Allocations: 17898)
+
+
+Started GET "/blogs/3" for 127.0.0.1 at 2022-02-23 00:08:14 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (1.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 2263)
+Completed 200 OK in 66ms (Views: 46.1ms | ActiveRecord: 1.7ms | Allocations: 3694)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-23 00:08:22 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 86.6ms | Allocations: 5642)
+  Rendered layout layouts/application.html.erb (Duration: 112.3ms | Allocations: 8151)
+Completed 200 OK in 134ms (Views: 92.0ms | ActiveRecord: 29.0ms | Allocations: 9675)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-02-23 00:08:26 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 2496)
+Completed 200 OK in 69ms (Views: 49.5ms | ActiveRecord: 1.4ms | Allocations: 3996)
+
+
