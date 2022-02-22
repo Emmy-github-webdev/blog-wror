@@ -1,7 +1,7 @@
 <h1>Users</h1>
 
 <% @user_lists.each do |users|%>
-<p><%= users.name %></p>
+<p><%= link_to users.name, user_path(users.id) %></p>
 <p><%= image_tag users.photo %></p>
 <p><%= users.bio %></p>
 <% end %>
