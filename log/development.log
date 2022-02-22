@@ -228,3 +228,15 @@ Completed 404 Not Found in 27ms (ActiveRecord: 6.2ms | Allocations: 2945)
 ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=show):
   
 app/controllers/blogs_controller.rb:6:in `show'
+Started GET "/blogs/show" for 127.0.0.1 at 2022-02-22 23:05:12 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+Completed 404 Not Found in 91ms (ActiveRecord: 28.6ms | Allocations: 3466)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=show):
+  
+app/controllers/blogs_controller.rb:6:in `show'
