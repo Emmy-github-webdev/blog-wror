@@ -254,3 +254,16 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 73ms (Views: 66.9ms | ActiveRecord: 0.7ms | Allocations: 5132)
 
 
+Started GET "/" for 127.0.0.1 at 2022-02-22 15:43:28 +0100
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 52.7ms | Allocations: 7686)
+  Rendered layout layouts/application.html.erb (Duration: 312.7ms | Allocations: 42221)
+Completed 200 OK in 365ms (Views: 321.0ms | ActiveRecord: 4.7ms | Allocations: 48981)
+
+
