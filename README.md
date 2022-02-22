@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Blog
 
-> Description the project.
+> Blog project is built with Ruby on Rails.
 
 ## Built With
 
