@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/LineLength
 10.times do |blogs|
   Blog.create!(
     title: "My blog title #{blogs}",
@@ -5,4 +6,4 @@
   )
 end
 
-puts 'Blogs created successfully!'
+# rubocop:enable Metrics/LineLength
