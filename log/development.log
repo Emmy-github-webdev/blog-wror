@@ -205,3 +205,26 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 2.1ms | Allocations: 5196)
 
 
+Started GET "/blogs" for 127.0.0.1 at 2022-02-22 22:56:45 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (3.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 133.1ms | Allocations: 4661)
+  Rendered layout layouts/application.html.erb (Duration: 225.4ms | Allocations: 18315)
+Completed 200 OK in 252ms (Views: 237.8ms | ActiveRecord: 27.7ms | Allocations: 20068)
+
+
+Started GET "/blogs/show" for 127.0.0.1 at 2022-02-22 22:57:01 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:6:in `show'
+Completed 404 Not Found in 27ms (ActiveRecord: 6.2ms | Allocations: 2945)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=show):
+  
+app/controllers/blogs_controller.rb:6:in `show'
