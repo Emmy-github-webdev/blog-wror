@@ -20,6 +20,9 @@ RSpec.describe 'Blogs', type: :request do
     it "is a success" do
       expect(response).to have_http_status(:ok)
     end
-    
+
+    it "Should has a correct placeholder text" do
+      expect(response.body).to include('title')
+    end
   end
 end
