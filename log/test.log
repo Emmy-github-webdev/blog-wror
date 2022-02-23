@@ -886,3 +886,65 @@ Processing by UsersController#index as */*
   Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 1514)
 Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.4ms | Allocations: 1813)
   [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/blogs" for 127.0.0.1 at 2022-02-23 20:05:14 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 942)
+  Rendered layout layouts/application.html.erb (Duration: 204.5ms | Allocations: 33167)
+Completed 200 OK in 247ms (Views: 212.8ms | ActiveRecord: 1.8ms | Allocations: 39829)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-02-23 20:05:15 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 2012)
+Completed 200 OK in 28ms (Views: 20.0ms | ActiveRecord: 2.1ms | Allocations: 3476)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-02-23 20:05:15 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 1514)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.2ms | Allocations: 1811)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-02-23 20:05:15 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 1514)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 2.1ms | Allocations: 1811)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users.2" for 127.0.0.1 at 2022-02-23 20:05:15 +0100
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 1514)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.3ms | Allocations: 1892)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users.2" for 127.0.0.1 at 2022-02-23 20:05:15 +0100
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 1514)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 1.8ms | Allocations: 1813)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
