@@ -17,13 +17,13 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET #show' do
-    before(:each) do
-      get users_path(2)  # get(:show)
-    end  
+    before(:each) { get users_path(2) } 
     it "is a success" do
       expect(response).to have_http_status(:ok)
     end
-  
     
+    it "Should has a correct placeholder text" do
+      expect(response.body).to include('name')
+    end
   end
 end
