@@ -1,40 +1,35 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Blog
 
-> Description the project.
-
+> Blog project is built with Ruby on Rails.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- Ruby 
+- Ruby on Rails
 
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+## Prerequisites
+  1.a working computer(Desktop or Laptop)
+## Install
+   1.text editor
+   2.git
+## Setup
+    1. create a local folder on your computer
+    2. Clone
+[blog](https://github.com/Emmy-github-webdev/blog-wror)
 
-### Setup
+## Usage
+    1.open the project with a text editor
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+## Run Tests
+ 1. Open terminal
+ 2. Run rails server
+ 3. Copy the URL http://127.0.0.1:3000/
+ 4. Launch the URL on browser
 
 
 
@@ -42,31 +37,20 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Emmy-github-webdev](https://github.com/Emmy-github-webdev)
+- Twitter: [@ogaemmanueloga](https://twitter.com/ogaemmanueloga)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/emmanuelogaho)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Emmy-github-webdev/blog-wror/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
