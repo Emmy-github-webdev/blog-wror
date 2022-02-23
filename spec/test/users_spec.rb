@@ -15,4 +15,15 @@ RSpec.describe 'Users', type: :request do
     end
     
   end
+
+  describe 'GET #show' do
+    before(:each) do
+      get users_path(2)  # get(:show)
+    end  
+    it "is a success" do
+      expect(response).to have_http_status(:ok)
+    end
+  
+    
+  end
 end
