@@ -68,3 +68,29 @@ FOREIGN KEY ("user_id")
   [1m[36mTRANSACTION (27.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mBlog Load (1.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2022-03-01 00:44:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 62.7ms | Allocations: 808)
+Completed 200 OK in 161ms (Views: 76.1ms | ActiveRecord: 0.0ms | Allocations: 6672)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 00:45:00 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 1275.8ms | Allocations: 89664)
+Completed 200 OK in 1292ms (Views: 1286.5ms | ActiveRecord: 0.0ms | Allocations: 91027)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2022-03-01 00:45:15 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 2686)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 3780)
+
+
