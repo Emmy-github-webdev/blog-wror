@@ -487,3 +487,202 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 39ms (Views: 25.0ms | ActiveRecord: 1.4ms | Allocations: 3017)
 
 
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:27:29 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 106.9ms | Allocations: 5052)
+  Rendered layout layouts/application.html.erb (Duration: 166.1ms | Allocations: 19089)
+Completed 200 OK in 192ms (Views: 171.4ms | ActiveRecord: 31.5ms | Allocations: 23624)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:28:38 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1127)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 3897)
+Completed 200 OK in 49ms (Views: 42.4ms | ActiveRecord: 1.0ms | Allocations: 5065)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:33:56 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 675)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 2874)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.8ms | Allocations: 3176)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:35:34 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 56.1ms | Allocations: 2753)
+  Rendered layout layouts/application.html.erb (Duration: 154.7ms | Allocations: 16468)
+Completed 200 OK in 195ms (Views: 132.5ms | ActiveRecord: 28.6ms | Allocations: 20747)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:36:58 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.1ms | Allocations: 7715)
+
+
+  
+NameError (undefined local variable or method `posts' for #<User id: 1, name: "John Doe", photo: "https://via.placeholder.com/200x200", bio: "Project Manager", created_at: "2022-02-28 23:22:58.691339000 +0000", updated_at: "2022-02-28 23:22:58.691339000 +0000", postsCounter: nil>):
+  
+app/models/user.rb:7:in `recent_posts'
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:37:52 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 15.6ms | Allocations: 12852)
+
+
+  
+NameError (undefined local variable or method `posts' for #<User id: 1, name: "John Doe", photo: "https://via.placeholder.com/200x200", bio: "Project Manager", created_at: "2022-02-28 23:22:58.691339000 +0000", updated_at: "2022-02-28 23:22:58.691339000 +0000", postsCounter: nil>):
+  
+app/models/user.rb:7:in `recent_posts'
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:38:52 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 111.4ms | Allocations: 14057)
+Completed 200 OK in 341ms (Views: 115.7ms | ActiveRecord: 14.5ms | Allocations: 29748)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:39:09 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 799)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 2998)
+Completed 200 OK in 52ms (Views: 44.4ms | ActiveRecord: 4.3ms | Allocations: 3305)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-01 20:39:11 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 2226)
+Completed 200 OK in 41ms (Views: 26.8ms | ActiveRecord: 3.0ms | Allocations: 3254)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:42:34 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 36.1ms | Allocations: 2964)
+  Rendered layout layouts/application.html.erb (Duration: 120.0ms | Allocations: 16901)
+Completed 200 OK in 154ms (Views: 115.1ms | ActiveRecord: 13.3ms | Allocations: 21463)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:42:39 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 20.4ms | Allocations: 2433)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 2523)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 6.0ms | Allocations: 8474)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    1: <%= image_tag @user.photo%>
+    2: <h1><%= @user.name%></h1>
+    3: <em><%= @user.bio %></em>
+    4: <p><%= @user.postsCounter %></p>
+  
+app/views/users/show.html.erb:1
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:43:05 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2509)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2603)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.0ms | Allocations: 4445)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    1: <%= image_tag @user.photo %>
+    2: <h1><%= @user.name %></h1>
+    3: <em><%= @user.bio %></em>
+    4: <p><%= @user.postsCounter %></p>
+  
+app/views/users/show.html.erb:1
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:43:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2490)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2584)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.0ms | Allocations: 4516)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: 
+    2: <h1><%= @user.name %></h1>
+    3: <em><%= @user.bio %></em>
+    4: <p><%= @user.postsCounter %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:44:21 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 3122)
+Completed 200 OK in 50ms (Views: 32.6ms | ActiveRecord: 1.1ms | Allocations: 5087)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:44:28 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 1021)
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 3224)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 1.8ms | Allocations: 3582)
+
+
