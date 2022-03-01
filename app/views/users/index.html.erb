@@ -1,4 +1,5 @@
 <% @user.each do |user_item|%>
   <h2><%= link_to user_item.name, user_path(user_item.id) %></h2>
   <p><%= user_item.bio%></p>
+  
 <% end %>

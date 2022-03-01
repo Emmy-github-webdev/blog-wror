@@ -686,3 +686,200 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 1.8ms | Allocations: 3582)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-01 21:00:42 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 104ms (ActiveRecord: 24.5ms | Allocations: 6225)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-01 21:02:24 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 32ms (ActiveRecord: 10.5ms | Allocations: 3979)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+  [1m[36mBlog Load (2.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started GET "/" for 127.0.0.1 at 2022-03-01 21:10:12 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 97ms (ActiveRecord: 20.7ms | Allocations: 6170)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-01 21:10:49 +0100
+Processing by BlogsController#index as HTML
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 6521)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<BlogsController:0x00000000062110>
+
+    @user = User.find(params[user_id])
+                             ^^^^^^^
+Did you mean?  user_url):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+  [1m[36mBlog Load (1.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+Started GET "/" for 127.0.0.1 at 2022-03-01 21:16:30 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 113ms (ActiveRecord: 36.2ms | Allocations: 6262)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+  [1m[36mBlog Load (1.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mBlog Load (1.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBlog Load (2.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Load (2.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mComment Load (31.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (214.9ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The joy of a prgrammer"], ["text", "The of a programmer is to solve problems"], ["user_id", 2], ["created_at", "2022-03-01 22:15:50.107832"], ["updated_at", "2022-03-01 22:15:50.107832"], ["commentsCounter", nil], ["likesCounter", nil]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2022-03-01 23:42:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 53ms (ActiveRecord: 8.1ms | Allocations: 8108)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-01 23:43:10 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 46ms (ActiveRecord: 17.3ms | Allocations: 3997)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (1.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The joy of a prgrammer"], ["text", "The of a programmer is to solve problems"], ["user_id", 2], ["created_at", "2022-03-01 22:49:13.920206"], ["updated_at", "2022-03-01 22:49:13.920206"], ["commentsCounter", nil], ["likesCounter", nil]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBlog Create (2.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Title testing"], ["text", "Texting content"], ["user_id", 2], ["created_at", "2022-03-01 22:52:30.510086"], ["updated_at", "2022-03-01 22:52:30.510086"], ["commentsCounter", nil], ["likesCounter", nil]]
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "postsCounter" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-01 22:52:30.538141"], ["postsCounter", 4], ["id", 2]]
+  [1m[36mTRANSACTION (38.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Create (1.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Joy of programmer"], ["text", "Texting content"], ["user_id", 1], ["created_at", "2022-03-01 22:54:54.266498"], ["updated_at", "2022-03-01 22:54:54.266498"], ["commentsCounter", nil], ["likesCounter", nil]]
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "postsCounter" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-01 22:54:54.275647"], ["postsCounter", 2], ["id", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mComment Create (38.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "user_id", "blog_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Great post by the author!"], ["user_id", 2], ["blog_id", 8], ["created_at", "2022-03-01 23:22:37.782137"], ["updated_at", "2022-03-01 23:22:37.782137"]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 8]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Update (1.5ms)[0m  [1m[33mUPDATE "blogs" SET "updated_at" = $1, "commentsCounter" = $2 WHERE "blogs"."id" = $3[0m  [["updated_at", "2022-03-01 23:22:37.834857"], ["commentsCounter", 1], ["id", 8]]
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mTRANSACTION (41.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Create (2.1ms)[0m  [1m[32mINSERT INTO "comments" ("text", "user_id", "blog_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "My pleasure!"], ["user_id", 1], ["blog_id", 1], ["created_at", "2022-03-01 23:23:30.426915"], ["updated_at", "2022-03-01 23:23:30.426915"]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Update (1.1ms)[0m  [1m[33mUPDATE "blogs" SET "updated_at" = $1, "commentsCounter" = $2 WHERE "blogs"."id" = $3[0m  [["updated_at", "2022-03-01 23:23:30.445450"], ["commentsCounter", 4], ["id", 1]]
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBlog Load (2.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-03-02 00:27:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 62ms (ActiveRecord: 8.6ms | Allocations: 8106)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-03-02 00:27:50 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 163.8ms | Allocations: 8716)
+  Rendered layout layouts/application.html.erb (Duration: 395.9ms | Allocations: 42941)
+Completed 200 OK in 409ms (Views: 397.5ms | ActiveRecord: 7.1ms | Allocations: 44337)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-02 00:27:55 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 2514)
+Completed 200 OK in 57ms (Views: 34.8ms | ActiveRecord: 4.2ms | Allocations: 5033)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-02 00:28:06 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 2254)
+Completed 200 OK in 42ms (Views: 33.9ms | ActiveRecord: 0.9ms | Allocations: 3055)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-02 00:29:10 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 5ms (ActiveRecord: 0.0ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-02 00:35:17 +0100
+Processing by BlogsController#index as HTML
+Completed 404 Not Found in 105ms (ActiveRecord: 22.0ms | Allocations: 6235)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/blogs_controller.rb:3:in `index'
