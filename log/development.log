@@ -228,3 +228,151 @@ Migrating to AddCommentCounterToBlogs (20220301095259)
   [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-01 18:44:46 +0100
+Started GET "/" for 127.0.0.1 at 2022-03-01 18:44:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (35.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 123.5ms | Allocations: 11294)
+  Rendered blogs/index.html.erb within layouts/application (Duration: 114.8ms | Allocations: 11982)
+  Rendered layout layouts/application.html.erb (Duration: 130.3ms | Allocations: 12256)
+Completed 500 Internal Server Error in 576ms (ActiveRecord: 0.0ms | Allocations: 23881)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `blogs' for #<ActionView::Base:0x0000000000ca30>
+Did you mean?  @blog):
+    1: <h1>Blogs</h1>
+    2: 
+    3: <div id="blogs">
+    4:   <% blogs.each do |blog| %>
+    5:     <%= render blog %>
+    6:   <% end %>
+    7: <div>
+  
+app/views/blogs/index.html.erb:4
+  Rendered layout layouts/application.html.erb (Duration: 127.2ms | Allocations: 12153)
+Completed 500 Internal Server Error in 585ms (ActiveRecord: 0.0ms | Allocations: 24491)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `blogs' for #<ActionView::Base:0x0000000000ca08>
+Did you mean?  @blog):
+    1: <h1>Blogs</h1>
+    2: 
+    3: <div id="blogs">
+    4:   <% blogs.each do |blog| %>
+    5:     <%= render blog %>
+    6:   <% end %>
+    7: <div>
+  
+app/views/blogs/index.html.erb:4
+
+NameError: constant WebConsole::SourceLocation not defined
+
+          source_location = SourceLocation.new(binding)
+                            ^^^^^^^^^^^^^^
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:51:in `block in guess_the_first_application_binding'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `each'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `find'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `guess_the_first_application_binding'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:30:in `first'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/session.rb:48:in `initialize'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `new'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `from'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:30:in `block in call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `catch'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/rack/logger.rb:36:in `call_app'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/rack/logger.rb:25:in `block in call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/activesupport-7.0.2.2/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/activesupport-7.0.2.2/lib/active_support/tagged_logging.rb:37:in `tagged'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/activesupport-7.0.2.2/lib/active_support/tagged_logging.rb:99:in `tagged'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/rack/logger.rb:25:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/request_id.rb:26:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/activesupport-7.0.2.2/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/static.rb:23:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/actionpack-7.0.2.2/lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/engine.rb:530:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/configuration.rb:252:in `call'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/request.rb:77:in `block in handle_request'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/request.rb:76:in `handle_request'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/server.rb:441:in `process_client'
+	from /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/puma-5.6.2/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-03-01 18:46:20 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 29.7ms | Allocations: 6338)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 6453)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms | Allocations: 17249)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `blogs' for #<ActionView::Base:0x0000000000c940>
+Did you mean?  @blog):
+    1: <h1>Blogs</h1>
+    2: 
+    3: <div id="blogs">
+    4:   <% blogs.each do |blog| %>
+    5:     <%= render blog %>
+    6:   <% end %>
+    7: <div>
+  
+app/views/blogs/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-03-01 19:09:07 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2554)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2649)
+Completed 500 Internal Server Error in 20ms (Allocations: 3804)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Blogs</h1>
+    2: 
+    3: <div id="blogs">
+    4:   <% @blogs.each do |blog| %>
+    5:     <%= render blog %>
+    6:   <% end %>
+    7: <div>
+  
+app/views/blogs/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-03-01 19:11:16 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (176.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 382.8ms | Allocations: 11928)
+  Rendered layout layouts/application.html.erb (Duration: 937.4ms | Allocations: 46225)
+Completed 200 OK in 978ms (Views: 944.2ms | ActiveRecord: 276.6ms | Allocations: 50998)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-01 19:12:29 +0100
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (1.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:3
+  Rendered blogs/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1073)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 3870)
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 1.4ms | Allocations: 5078)
+
+
