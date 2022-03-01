@@ -452,3 +452,38 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 285ms (Views: 256.4ms | ActiveRecord: 76.0ms | Allocations: 27273)
 
 
+Started GET "/users" for 127.0.0.1 at 2022-03-01 20:21:55 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 168.3ms | Allocations: 5077)
+  Rendered layout layouts/application.html.erb (Duration: 262.2ms | Allocations: 19110)
+Completed 200 OK in 323ms (Views: 276.8ms | ActiveRecord: 49.7ms | Allocations: 23659)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-01 20:22:01 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 2482)
+Completed 200 OK in 41ms (Views: 18.4ms | ActiveRecord: 5.3ms | Allocations: 4006)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-01 20:22:19 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 2232)
+Completed 200 OK in 39ms (Views: 25.0ms | ActiveRecord: 1.4ms | Allocations: 3017)
+
+
