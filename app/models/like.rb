@@ -1,8 +1,11 @@
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :blog
+  after_save :update_likes
 
-  def update_likes(counter)
-    blog.update('likesCounter', counter)
+  private
+
+  def update_likes
+    blog.update(likesCounter: blog.like.length)
   end
 end

@@ -1,8 +1,12 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :blog
+  after_save :update_comments
 
-  def update_comments(counter)
-    blog.update('commentsCounter', counter)
+  private
+
+  def update_comments
+    blog.update(commentsCounter: blog.comments.length)
   end
+
 end
