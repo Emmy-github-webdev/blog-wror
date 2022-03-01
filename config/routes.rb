@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :comments
   resources :users
   get 'users/:id', to: 'users#show'
