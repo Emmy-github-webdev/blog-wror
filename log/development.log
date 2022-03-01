@@ -94,3 +94,13 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 3780)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-01 01:03:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 274.7ms | Allocations: 34638)
+Completed 200 OK in 310ms (Views: 286.2ms | ActiveRecord: 0.0ms | Allocations: 40657)
+
+
