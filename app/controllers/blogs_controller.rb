@@ -1,9 +1,5 @@
 class BlogsController < ApplicationController
-  def index
-    @blog_items = Blog.all
-  end
+  def index; end
 
-  def show
-    @blog_items = Blog.find(params[:id])
-  end
+  def show; end
 end

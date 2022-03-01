@@ -10,49 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_224_171_313) do
+ActiveRecord::Schema[7.0].define(version: 20_220_301_095_259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'blogs', force: :cascade do |t|
     t.string 'title'
     t.text 'text'
+    t.bigint 'user_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'user_id'
-    t.bigint 'like_id'
-    t.index ['like_id'], name: 'index_blogs_on_like_id'
+    t.integer 'commentsCounter'
+    t.integer 'likesCounter'
     t.index ['user_id'], name: 'index_blogs_on_user_id'
   end
 
   create_table 'comments', force: :cascade do |t|
     t.text 'text'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
     t.bigint 'user_id', null: false
     t.bigint 'blog_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
     t.index ['blog_id'], name: 'index_comments_on_blog_id'
     t.index ['user_id'], name: 'index_comments_on_user_id'
   end
 
   create_table 'likes', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.bigint 'blog_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['blog_id'], name: 'index_likes_on_blog_id'
+    t.index ['user_id'], name: 'index_likes_on_user_id'
   end
 
   create_table 'users', force: :cascade do |t|
     t.string 'name'
-    t.text 'photo'
+    t.string 'photo'
     t.text 'bio'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'like_id'
-    t.index ['like_id'], name: 'index_users_on_like_id'
+    t.integer 'postsCounter'
   end
 
-  add_foreign_key 'blogs', 'likes'
   add_foreign_key 'blogs', 'users'
   add_foreign_key 'comments', 'blogs'
   add_foreign_key 'comments', 'users'
-  add_foreign_key 'users', 'likes'
+  add_foreign_key 'likes', 'blogs'
+  add_foreign_key 'likes', 'users'
 end

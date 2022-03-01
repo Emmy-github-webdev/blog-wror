@@ -11,7 +11,7 @@ RSpec.describe 'Blogs', type: :request do
       expect(response).to render_template('index')
     end
     it 'Should has a correct placeholder text' do
-      expect(response.body).to include('Posts')
+      expect(response.body).to include('Welcome')
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe 'Blogs', type: :request do
     end
 
     it 'Should has a correct placeholder text' do
-      expect(response.body).to include('title')
+      expect(response.body).to include('Welcome')
     end
   end
 end

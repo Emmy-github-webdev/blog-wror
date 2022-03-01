@@ -11,7 +11,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'Should has a correct placeholder text' do
-      expect(response.body).to include('Users')
+      expect(response.body).to include('Welcome')
     end
   end
 
