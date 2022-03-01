@@ -8,5 +8,4 @@ class Comment < ApplicationRecord
   def update_comments
     blog.update(commentsCounter: blog.comments.length)
   end
-
 end
