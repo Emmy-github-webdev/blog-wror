@@ -9,4 +9,9 @@ class BlogsController < ApplicationController
     @blog = @user.blogs.find(params[:id])
     @comments = @blog.comments.all
   end
+
+  def new
+    @blog = Blog.new
+  end
+  
 end
