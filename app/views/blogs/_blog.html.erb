@@ -1,6 +1,6 @@
 <div class="card-body">
   <div class="card-content">
-    <p><%= blog.title %></p>
+    <p><%= link_to blog.title, user_blogs_path(@user.id) %></p>
     <P><%= blog.text%></p>
     <p class="card-post">Comments: <%= blog.commentsCounter%>, Likes: <%= blog.likesCounter%></p>
   </div>
