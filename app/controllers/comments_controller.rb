@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = 'Failed to add comment! Try again'
     end
-    redirect_to user_blog_path(blog.user.id, blog.id)
+    redirect_to user_blogs_path(blog.user.id, blog.id)
   end
   
   private 
