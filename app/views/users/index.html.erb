@@ -1,1 +1,11 @@
-<h1>Welcome to User home page</h1>
+<% @user.each do |user_item|%>
+  <section class="user-section">
+    <div class="card-img">
+      <%= image_tag user_item.photo, class: 'img' %>
+    </div>
+   <div class="card-body">
+     <h2><%= link_to user_item.name, user_path(user_item.id), class: 'card-title'%></h2>
+     <p class="card-post">Posts: <%= user_item.postsCounter %></p>
+   </div>
+  </section>
+<% end %>

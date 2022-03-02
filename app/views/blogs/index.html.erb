@@ -1,1 +1,21 @@
-<h1>Welcome to Blog home page</h1>
+<div class="show-user-container">
+  <div class="user-show-section">
+    <div class="card-img"><%= image_tag @user.photo, class: 'img' %></div>
+    <div class="card-body">
+      <h2  class="card-title"><%= @user.name %></h2>
+      <p class="card-post">Posts: <%= @user.postsCounter %></p>
+    </div>
+  </div>
+
+  <% @blogs.each do |blog|%>
+   <div class="card-body">
+   <h1 class="card-title"> <%= blog.title %></h1>
+   <p class="card-content"><%= blog.text %></p>
+    <em class="card-post">
+    Comments: <%= blog.commentsCounter%>, Likes: <%= blog.likesCounter%>
+      <% blog.recent_comment%>
+    <em>
+   </div>
+  <% end %>
+</div>
+
