@@ -1,4 +1,17 @@
-<%= image_tag @user.photo %>
-<h1><%= @user.name %></h1>
-<em><%= @user.bio %></em>
-<p><%= @user.postsCounter %></p>
+<div class="show-user-container">
+  <div class="user-show-section">
+    <div class="card-img"><%= image_tag @user.photo, class: 'img' %></div>
+    <div class="card-body">
+      <h1 class="card-title"><%= @user.name %></h1>
+      <p class="card-post">Posts: <%= @user.postsCounter %></p>
+    </div>
+  </div>
+  <div class="card-body">
+    <h3 class="card-bio-title"><%= @user.name %> Bio</h3>
+    <em class="bio-content"><%= @user.bio %></em>
+  </div>
+  <%= render partial: 'blogs/blog', collection: @blog %>
+  <button>
+    <%= link_to 'See all posts', user_blogs_path(@user.id)%>
+  </button>
+</div>

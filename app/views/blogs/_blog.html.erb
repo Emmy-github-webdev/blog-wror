@@ -1,4 +1,7 @@
-<div id="<%= dom_id blog %>">
-  <p><%= blog.title%></p>
-  <P><%= blog.text%></p>
+<div class="card-body">
+  <div class="card-content">
+    <p><%= blog.title %></p>
+    <P><%= blog.text%></p>
+    <p class="card-post">Comments: <%= blog.commentsCounter%>, Likes: <%= blog.likesCounter%></p>
+  </div>
 </div>
