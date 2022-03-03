@@ -3,6 +3,7 @@
     <div class="card-img"><%= image_tag @user.photo, class: 'img' %></div>
     <div class="card-body">
       <h1 class="card-title"><%= @user.name %></h1>
+      <div><%= link_to 'Add A Post', user_new_blog_path(@user.id) %></div>
       <p class="card-post">Posts: <%= @user.postsCounter %></p>
     </div>
   </div>
