@@ -1,18 +1,11 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :comments
-  resources :users
-  get 'users/:id', to: 'users#show'
-  get 'users', to: 'users#index'
-
-  # resources :blogs
-  # get 'blogs/:id', to: 'blogs#show'
-  # get 'blogs', to: 'blogs#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   resources :users, only: %i[index show] do
     resources :blogs, only: %i[index show]
   end
+  post 'users/:user_id/blog', to: 'blogs#create', as: 'create_new_blog'
+  post 'users/:id/comment/create', to: 'comments#create', as: 'comment_form'
+  post 'users/:id/like/create', to: 'likes#create', as: 'like_form'
+  get 'users/blogs/:blog_id/comments/new', to: 'comments#new', as: 'blog_comment'
+  get 'users/:user_id/blogs/new', to: 'blogs#new', as: 'user_new_blog'
   root 'users#index'
 end

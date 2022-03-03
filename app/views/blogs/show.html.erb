@@ -1,2 +1,23 @@
-<h1><%= @blog.title %></h1>
-<em><%= @blog.text %><em>
+<div class="show-user-container">
+  <h1 class="card-title"><%= @blog.title %></h1>
+  <em><%= @blog.text %><em>
+  <div>
+    <%= render partial: "shared/comment_total", locals: { comment_total: @blog.comments.size } %>,
+    <%= render partial: "shared/like_total", locals: {like_total: @blog.likes.size} %>
+  </div>
+  <div>
+    <%= render partial: "shared/like_shared", locals: {blog: @blog} %>
+  </div>
+    <div>
+    <h4>Comments</h4>
+      <% if @blog.comments.size > 0 %>
+         <%= render partial: "shared/comment_shared", locals: {comments: @blog.comments} %>
+      <% end %>
+   </div>
+
+   <div>
+    <em>Add Comment</em>
+    <%= render partial: 'shared/new_comment', locals: {
+      blog: @blog } %>
+   </div>
+</div>

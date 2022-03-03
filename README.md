@@ -18,18 +18,17 @@ To get a local copy up and running follow these simple example steps.
    1.text editor
    2.git
 ## Setup
-    1. create a local folder on your computer
-    2. Clone
-[blog](https://github.com/Emmy-github-webdev/blog-wror)
+  - git clone git@github.com:Emmy-github-webdev/blog-wror.git.
+  - cd blog.
+  - bundle install.
+  - rails s
 
 ## Usage
     1.open the project with a text editor
 
 ## Run Tests
- 1. Open terminal
- 2. Run rails server
- 3. Copy the URL http://127.0.0.1:3000/
- 4. Launch the URL on browser
+ 1. Copy the URL http://127.0.0.1:3000/
+ 2. Launch the URL on browser
 
 
 

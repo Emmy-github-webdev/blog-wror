@@ -1,7 +1,10 @@
 <div class="card-body">
   <div class="card-content">
-    <p><%= link_to blog.title, user_blogs_path(@user.id) %></p>
-    <P><%= blog.text%></p>
-    <p class="card-post">Comments: <%= blog.commentsCounter%>, Likes: <%= blog.likesCounter%></p>
+    <p><%= link_to blog.title, user_blog_path(blog.id) %></p>
+    <P><%= blog.text %></p>
+    <p class="card-post">
+      <%= render partial: "shared/comment_total", locals: {comment_total:blog.comments.size} %>,
+      <%= render partial: "shared/like_total", locals: {like_total:blog.likes.size} %>
+    </p>
   </div>
 </div>

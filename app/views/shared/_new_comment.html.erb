@@ -1,0 +1,10 @@
+<div>
+  <%= form_with url: comment_form_path(blog.id), scope: :data do |form|%>
+  <div>
+    <%= form.text_area :text, required: true, placeholder: "Comment" %>
+  </div>
+  <div>
+    <%= form.submit 'Submit' %>
+  </div>
+  <% end %>
+</div>

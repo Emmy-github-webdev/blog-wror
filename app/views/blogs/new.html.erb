@@ -1,0 +1,15 @@
+<h2>Add new post</h2>
+<p><%= flash[:notice] %></p>
+
+<%= form_with url: create_new_blog_path, model: @blog do |form| %>
+ <div>
+   <%= form.label :title, style: "display: block"%>
+   <%= form.text_filed :title %>
+ </div>
+
+ <div>
+   <%= form.label :text, style: "display: block"%>
+   <%= form.text_area :title %>
+ </div>
+ <div><%= form.submit %></div>
+<% end %>
