@@ -27,10 +27,8 @@ To get a local copy up and running follow these simple example steps.
     1.open the project with a text editor
 
 ## Run Tests
- 1. Open terminal
- 2. Run rails server
- 3. Copy the URL http://127.0.0.1:3000/
- 4. Launch the URL on browser
+ 1. Copy the URL http://127.0.0.1:3000/
+ 2. Launch the URL on browser
 
 
 
