@@ -13,25 +13,23 @@ class BlogsController < ApplicationController
   def new
     @blog = Blog.new
   end
-  
+
   def create
     @current_user = User.find(params[:user_id])
-    @blog = Blog.new(user: @current_user, 
-      title: params[:blog][:title], 
-      text: params[:blog][:text] 
-    )
+    @blog = Blog.new(user: @current_user,
+                     title: params[:blog][:title],
+                     text: params[:blog][:text])
     if @blog.save
       flash[:notice] = 'Blog added'
       redirect_to user_blogs_path(blog.user.id)
     else
       render :new
-    end 
+    end
   end
 
   private
-  
+
   def blog_params
     params.require(:blog).permit(:title, :text)
   end
-  
 end

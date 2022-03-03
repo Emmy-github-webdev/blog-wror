@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :users, only: %i[index show] do
     resources :blogs, only: %i[index show]
   end
@@ -9,5 +8,4 @@ Rails.application.routes.draw do
   get 'users/blogs/:blog_id/comments/new', to: 'comments#new', as: 'blog_comment'
   get 'users/:user_id/blogs/new', to: 'blogs#new', as: 'user_new_blog'
   root 'users#index'
-
 end

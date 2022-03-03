@@ -6,8 +6,7 @@ class LikesController < ApplicationController
       redirect_to user_blogs_path(blog.user.id, blog.id)
     else
       redirect_to user_blogs_path(blog.user.id, blog.id),
-      alert: ''
+                  alert: ''
     end
   end
-  
 end
