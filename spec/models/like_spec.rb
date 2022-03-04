@@ -11,8 +11,8 @@ RSpec.describe Like, type: :model do
   end
 
   let(:blog) do
-   Blog.create!(
-      user: user,
+    Blog.create!(
+      user:,
       title: 'Unit testing',
       text: 'Unit testing is interesting. Though complicated!',
       commentsCounter: 0,
@@ -20,9 +20,8 @@ RSpec.describe Like, type: :model do
     )
   end
 
-  it "update likes for a blog" do
-    blog.likes.create!(user: user)
-    expect(blog.likes.count).to eq(1)  
+  it 'update likes for a blog' do
+    blog.likes.create!(user:)
+    expect(blog.likes.count).to eq(1)
   end
-  
 end
