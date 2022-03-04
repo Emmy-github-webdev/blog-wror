@@ -38,5 +38,4 @@ RSpec.describe User, type: :model do
     subject.blogs.create(title: 'testing title 3', text: 'testing text 3', commentsCounter: 1, likesCounter: 0)
     expect(subject.recent_posts.length).to eq(3)
   end
-  
 end
