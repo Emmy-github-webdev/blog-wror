@@ -11,4 +11,9 @@ RSpec.describe Blog, type: :model do
     )
   end
   before { subject.save }
+
+  it 'is not valid without a title' do
+    subject.title = nil
+    expect(subject).to_not be_valid
+  end
 end
