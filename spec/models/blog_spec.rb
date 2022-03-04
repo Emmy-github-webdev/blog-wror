@@ -27,5 +27,9 @@ RSpec.describe Blog, type: :model do
     expect(subject).to_not be_valid
   end
   
-  
+  it "comments counter must be an integer greater or equal to 0" do
+    subject.commentsCounter = nil
+    expect(subject).to_not be_valid
+  end
+
 end
