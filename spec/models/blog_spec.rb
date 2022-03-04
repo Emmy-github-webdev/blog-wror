@@ -21,5 +21,11 @@ RSpec.describe Blog, type: :model do
     subject.title = 'hello' * 260
     expect(subject).to_not be_valid
   end
+
+  it "likes counter must be an integer greater or equal to 0" do
+    subject.likesCounter = nil
+    expect(subject).to_not be_valid
+  end
+  
   
 end
