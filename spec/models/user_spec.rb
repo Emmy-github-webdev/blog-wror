@@ -25,4 +25,9 @@ RSpec.describe User, type: :model do
     subject.postsCounter = nil
     expect(subject).to_not be_valid
   end
+
+  it 'name is required' do
+    subject.name = nil
+    expect(subject).to_not be_valid
+  end
 end
