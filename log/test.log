@@ -1131,3 +1131,107 @@ Processing by UsersController#index as */*
   Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1516)
 Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 1815)
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "postsCounter") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://www.photo.com"], ["bio", "A Teacher"], ["created_at", "2022-03-04 08:09:14.056063"], ["updated_at", "2022-03-04 08:09:14.056063"], ["postsCounter", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "postsCounter") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://www.photo.com"], ["bio", "A Teacher"], ["created_at", "2022-03-04 08:09:14.208935"], ["updated_at", "2022-03-04 08:09:14.208935"], ["postsCounter", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "postsCounter") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://www.photo.com"], ["bio", "A Teacher"], ["created_at", "2022-03-04 08:09:14.219857"], ["updated_at", "2022-03-04 08:09:14.219857"], ["postsCounter", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "postsCounter") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://www.photo.com"], ["bio", "A Teacher"], ["created_at", "2022-03-04 08:09:14.231187"], ["updated_at", "2022-03-04 08:09:14.231187"], ["postsCounter", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "postsCounter") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://www.photo.com"], ["bio", "A Teacher"], ["created_at", "2022-03-04 08:09:14.246636"], ["updated_at", "2022-03-04 08:09:14.246636"], ["postsCounter", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBlog Create (2.0ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "testing title"], ["text", "testing text"], ["user_id", 30], ["created_at", "2022-03-04 08:09:14.332618"], ["updated_at", "2022-03-04 08:09:14.332618"], ["commentsCounter", 1], ["likesCounter", 0]]
+  [1m[36mBlog Load (4.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 30]]
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "postsCounter" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-04 08:09:14.351806"], ["postsCounter", 1], ["id", 30]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBlog Create (1.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "testing title 1"], ["text", "testing text 1"], ["user_id", 30], ["created_at", "2022-03-04 08:09:14.360062"], ["updated_at", "2022-03-04 08:09:14.360062"], ["commentsCounter", 1], ["likesCounter", 0]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBlog Create (1.8ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "testing title 2"], ["text", "testing text 2"], ["user_id", 30], ["created_at", "2022-03-04 08:09:14.370251"], ["updated_at", "2022-03-04 08:09:14.370251"], ["commentsCounter", 1], ["likesCounter", 0]]
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "postsCounter" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-04 08:09:14.376842"], ["postsCounter", 2], ["id", 30]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBlog Create (1.8ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "text", "user_id", "created_at", "updated_at", "commentsCounter", "likesCounter") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "testing title 3"], ["text", "testing text 3"], ["user_id", 30], ["created_at", "2022-03-04 08:09:14.384642"], ["updated_at", "2022-03-04 08:09:14.384642"], ["commentsCounter", 1], ["likesCounter", 0]]
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "postsCounter" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-04 08:09:14.391344"], ["postsCounter", 3], ["id", 30]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 30], ["LIMIT", 3]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-03-04 09:09:14 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 488.9ms | Allocations: 33398)
+Completed 200 OK in 520ms (Views: 497.0ms | ActiveRecord: 1.0ms | Allocations: 39384)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-03-04 09:09:15 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 1516)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 1.1ms | Allocations: 1814)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2022-03-04 09:09:15 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1516)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.3ms | Allocations: 1813)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users.2" for 127.0.0.1 at 2022-03-04 09:09:15 +0100
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 1516)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 1894)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users.2" for 127.0.0.1 at 2022-03-04 09:09:15 +0100
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 1516)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.1ms | Allocations: 1815)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
