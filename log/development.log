@@ -7988,3 +7988,36 @@ Completed 401 Unauthorized in 63ms (ActiveRecord: 3.5ms | Allocations: 4067)
 
 
   [1m[36mUser Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-07 19:35:57 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 29)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 151)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 1297)
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | Allocations: 14683)
+Completed 200 OK in 225ms (Views: 97.5ms | ActiveRecord: 30.5ms | Allocations: 21865)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-03-07 19:36:17 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 9.6ms | Allocations: 1082)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 122)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 2187)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 4337)
+Completed 200 OK in 922ms (Views: 30.7ms | ActiveRecord: 5.1ms | Allocations: 12930)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(892336952976185220)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20220307170725)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
