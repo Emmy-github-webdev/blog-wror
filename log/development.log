@@ -7868,3 +7868,123 @@ Migrating to AddDeviseToUsers (20220307170725)
   [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-07 19:06:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 27.9ms | Allocations: 1512)
+  Rendered layout layouts/application.html.erb (Duration: 1154.8ms | Allocations: 39549)
+Completed 200 OK in 1491ms (Views: 1268.5ms | ActiveRecord: 3.1ms | Allocations: 45857)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-07 19:06:20 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 3086)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 2.9ms | Allocations: 3442)
+
+
+Started GET "/users/register" for 127.0.0.1 at 2022-03-07 19:06:34 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"register"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 93ms (ActiveRecord: 19.5ms | Allocations: 9720)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=register):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/users/registration" for 127.0.0.1 at 2022-03-07 19:06:47 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"registration"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.0ms | Allocations: 1060)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=registration):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-07 19:21:00 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 3.5ms | Allocations: 427)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 29.2ms | Allocations: 1375)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 270.0ms | Allocations: 8778)
+  Rendered layout layouts/application.html.erb (Duration: 493.8ms | Allocations: 42510)
+Completed 200 OK in 631ms (Views: 510.5ms | ActiveRecord: 18.3ms | Allocations: 65336)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-07 19:21:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 5.3ms | Allocations: 571)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 46.7ms | Allocations: 2968)
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 5199)
+Completed 200 OK in 97ms (Views: 69.7ms | ActiveRecord: 0.0ms | Allocations: 7486)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2022-03-07 19:21:28 +0100
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 25)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 185)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 1549)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 3791)
+Completed 200 OK in 60ms (Views: 55.0ms | ActiveRecord: 0.0ms | Allocations: 5388)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2022-03-07 19:21:31 +0100
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/confirmations/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 187)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/confirmations/new.html.erb within layouts/application (Duration: 26.3ms | Allocations: 1796)
+  Rendered layout layouts/application.html.erb (Duration: 58.8ms | Allocations: 4038)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.0ms | Allocations: 5320)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-07 19:21:40 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 121)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 3084)
+Completed 200 OK in 43ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 3689)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-07 19:21:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 165)
+  Rendered /home/emmy/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 3047)
+Completed 200 OK in 60ms (Views: 50.1ms | ActiveRecord: 0.0ms | Allocations: 3681)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-03-07 19:21:54 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 63ms (ActiveRecord: 3.5ms | Allocations: 4067)
+
+
+  [1m[36mUser Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
