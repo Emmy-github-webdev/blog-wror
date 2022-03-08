@@ -9313,3 +9313,40 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 557ms (Views: 530.1ms | ActiveRecord: 0.6ms | Allocations: 100248)
 
 
+Started GET "/users" for 127.0.0.1 at 2022-03-07 22:35:45 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 580)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 2822)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 3123)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-03-07 22:35:50 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 579)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 2797)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.9ms | Allocations: 3076)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-03-07 22:35:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-03-08 09:13:26 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 100.5ms | Allocations: 3099)
+  Rendered layout layouts/application.html.erb (Duration: 131.4ms | Allocations: 5418)
+Completed 200 OK in 138ms (Views: 133.9ms | ActiveRecord: 28.8ms | Allocations: 5737)
+
+
