@@ -27,6 +27,13 @@ class BlogsController < ApplicationController
     end
   end
 
+  def destroy
+    @blog.destroy
+    respond_to do |format|
+      format.html { redirect_to user_blogs_path(@blog.user.id), notice: 'Post item was successfully removed.' }
+    end
+  end
+
   private
 
   def blog_params
