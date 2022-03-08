@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @blogs = @user.blogs.includes(:comments)
@@ -19,7 +21,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(user: @current_user,
                      title: params[:blog][:title],
                      text: params[:blog][:text])
-    if @blog.save!
+    if @blog.save
       flash[:notice] = 'Blog added'
       redirect_to user_blogs_path(@blog.user.id)
     else
@@ -28,6 +30,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+    @blog = Blog.find(params[:id])
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to user_blogs_path(@blog.user.id), notice: 'Post item was successfully removed.' }

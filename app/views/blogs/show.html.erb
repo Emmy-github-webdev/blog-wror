@@ -5,6 +5,7 @@
     <%= render partial: "shared/comment_total", locals: { comment_total: @blog.comments.size } %>,
     <%= render partial: "shared/like_total", locals: {like_total: @blog.likes.size} %>
   </div>
+  <%= button_to "Delete", @blog, method: :delete, class: 'btn btn-danger' %> 
   <div>
     <%= render partial: "shared/like_shared", locals: {blog: @blog} %>
   </div>
