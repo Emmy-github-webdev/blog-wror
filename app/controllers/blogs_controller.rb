@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @blogs = @user.blog.includes(:comments)
+    @blogs = @user.blogs.includes(:comments)
   end
 
   def show
@@ -19,9 +19,9 @@ class BlogsController < ApplicationController
     @blog = Blog.new(user: @current_user,
                      title: params[:blog][:title],
                      text: params[:blog][:text])
-    if @blog.save
+    if @blog.save!
       flash[:notice] = 'Blog added'
-      redirect_to user_blogs_path(blog.user.id)
+      redirect_to user_blogs_path(@blog.user.id)
     else
       render :new
     end
