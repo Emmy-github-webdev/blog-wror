@@ -14,6 +14,13 @@ class CommentsController < ApplicationController
     redirect_to user_blogs_path(blog.user.id, blog.id)
   end
 
+  def destroy
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to user_blogs_path(@blog.user.id), notice: 'Comment item was successfully removed.' }
+    end
+  end
+
   private
 
   def comment_params
