@@ -40,6 +40,11 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@ogaemmanueloga](https://twitter.com/ogaemmanueloga)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/emmanuelogaho)
 
+👤 **Bunbee**
+
+- GitHub: [@mutinhiri](https://github.com/mutinhiri)
+- Twitter: [@bunbee](https://twitter.com/bunbee02)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mutinhiri)
 
 ## 🤝 Contributing
 
