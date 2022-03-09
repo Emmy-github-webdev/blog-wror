@@ -1,6 +1,8 @@
 <div class="show-user-container">
   <div class="user-show-section">
-    <div class="card-img"><%= image_tag @user.photo, class: 'img' %></div>
+    <img class="card-img">
+    <%= image_tag @user.photo,  class: 'img'  %>
+
     <div class="card-body">
       <h1 class="card-title"><%= @user.name %></h1>
       <div><%= link_to 'Add A Post', user_new_blog_path(@user.id) %></div>
@@ -13,6 +15,6 @@
   </div>
   <%= render partial: 'blogs/blog', collection: @blog %>
   <button>
-    <%= link_to 'See all posts', user_blogs_path(@user.id)%>
+    <%= link_to 'Post', user_blogs_path(@user.id)%>
   </button>
 </div>
