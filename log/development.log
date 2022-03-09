@@ -15191,3 +15191,39 @@ Migrating to AddRoleToUsers (20220309094226)
   [1m[36mActiveRecord::InternalMetadata Load (77.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-09 20:19:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (53.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 51ms (ActiveRecord: 0.0ms | Allocations: 5138)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-09 20:19:14 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 9.2ms | Allocations: 1598)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 58.0ms | Allocations: 5227)
+  Rendered layout layouts/application.html.erb (Duration: 891.7ms | Allocations: 39164)
+Completed 200 OK in 1141ms (Views: 918.6ms | ActiveRecord: 129.9ms | Allocations: 60323)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-03-09 20:19:36 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (51.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 593ms (ActiveRecord: 52.0ms | Allocations: 7054)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-09 20:19:37 +0100
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1290)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 3577)
+Completed 200 OK in 51ms (Views: 31.1ms | ActiveRecord: 3.2ms | Allocations: 6331)
+
+
