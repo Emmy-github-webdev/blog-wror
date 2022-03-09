@@ -15227,3 +15227,71 @@ Processing by UsersController#index as TURBO_STREAM
 Completed 200 OK in 51ms (Views: 31.1ms | ActiveRecord: 3.2ms | Allocations: 6331)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-09 20:46:07 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1165)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 3807)
+Completed 200 OK in 177ms (Views: 44.7ms | ActiveRecord: 41.7ms | Allocations: 9029)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-09 20:46:07 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 2761)
+Completed 200 OK in 52ms (Views: 27.2ms | ActiveRecord: 4.1ms | Allocations: 4600)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-09 20:54:35 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (29.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mComment Count (97.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 13.7ms | Allocations: 205)
+  [1m[36mLike Count (19.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 18.8ms | Allocations: 207)
+  Rendered collection of blogs/_blog.html.erb [1 times] (Duration: 270.1ms | Allocations: 10290)
+  Rendered users/show.html.erb within layouts/application (Duration: 380.7ms | Allocations: 18679)
+  Rendered layout layouts/application.html.erb (Duration: 398.0ms | Allocations: 20863)
+Completed 200 OK in 619ms (Views: 238.7ms | ActiveRecord: 202.4ms | Allocations: 39728)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-09 20:54:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (4.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mComment Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.7ms | Allocations: 18)
+  [1m[36mLike Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered collection of blogs/_blog.html.erb [1 times] (Duration: 32.7ms | Allocations: 1723)
+  Rendered users/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 2589)
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 4642)
+Completed 200 OK in 126ms (Views: 57.2ms | ActiveRecord: 23.0ms | Allocations: 7144)
+
+

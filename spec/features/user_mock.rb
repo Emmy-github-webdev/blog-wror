@@ -1,10 +1,10 @@
 require 'user'
 
-module Mocks
+module UserMocks
   def create_users
     names = [
-      { name: 'Emmanuel', bio: "Mathematics teacher", postsCounter: 1, email: 'emmanuel@2.com', role: 'admin' },
-      { name: 'Ogah', bio: "English teacher", postsCounter: 1, email: 'ogah@2.com', role: 'admin' }
+      { name: 'Emmanuel', bio: "Mathematics teacher", postsCounter:5 , email: 'emmanuel@2.com', role: 'admin' },
+      { name: 'Ogah', bio: "English teacher", postsCounter: 5, email: 'ogah@2.com', role: 'admin' }
     ]
     (0..1).each do |i|
       user = User.new(names[i])
@@ -19,11 +19,11 @@ module Mocks
   def create_blogs(users)
     users.each do |user|
       (1..5).each do |j|
-        Post.create(title: "Post number: #{j}", text: "This is post number: #{j}", commentsCounter: 0,
+        Blog.create(title: "Post number: #{j}", text: "This is post number: #{j}", commentsCounter: 0,
           likesCounter: 0, user_id: user.id)
       end
     end
-    Post.all
+    Blog.all
   end
 
   def create_likes_comments(users, blogs)
