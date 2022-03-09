@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-
-
   def new
     @comment = Comment.new
   end
@@ -21,7 +19,7 @@ class CommentsController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @comment = @blog.Comments.find(params[:comment_id])
     if @comment.destroy
-    flash[:success] = 'Comment item was successfully removed.'
+      flash[:success] = 'Comment item was successfully removed.'
     else
       flash[:error] = 'Try again.'
     end

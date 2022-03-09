@@ -33,7 +33,7 @@ class BlogsController < ApplicationController
     @user = User.find(params[:user_id])
     @blog = Blog.find_by_id(params[:blog_id])
     if @blog.destroy
-    flash[:success] = 'Post item was successfully removed.'
+      flash[:success] = 'Post item was successfully removed.'
     else
       flash[:error] = 'Try again.'
     end

@@ -15,11 +15,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/blogs/:blog_id/destroy_blog', to: 'blogs#destroy', as: 'destroy_blog'
   post '/users/:user_id/blogs/:blog_id/destroy_blog', to: 'blogs#destroy'
 
-
-
-
-
-  #delete 'users/:user_id/blogs/:blog_id/comments/:comment_id', to: 'comments#destroy', as: 'user_comment_delete'
-  #delete 'users/:user_id/blogs/:blog_id', to: 'blogs#destroy', as: 'user_post_delete'
+  # delete 'users/:user_id/blogs/:blog_id/comments/:comment_id', to: 'comments#destroy', as: 'user_comment_delete'
+  # delete 'users/:user_id/blogs/:blog_id', to: 'blogs#destroy', as: 'user_post_delete'
   root 'users#index'
 end
