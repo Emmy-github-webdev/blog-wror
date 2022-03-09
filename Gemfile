@@ -10,6 +10,7 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
+gem 'cancancan'
 gem 'devise'
 gem 'pg', '~> 1.1'
 
