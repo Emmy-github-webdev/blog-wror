@@ -30,11 +30,14 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
-    @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to user_blogs_path(@blog.user.id), notice: 'Post item was successfully removed.' }
+    @user = User.find(params[:user_id])
+    @blog = Blog.find_by_id(params[:blog_id])
+    if @blog.destroy
+    flash[:success] = 'Post item was successfully removed.'
+    else
+      flash[:error] = 'Try again.'
     end
+    redirect_to "/users/#{@user.id}/blogs"
   end
 
   private

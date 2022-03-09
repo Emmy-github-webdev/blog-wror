@@ -2,6 +2,10 @@
   <h1 class="card-title"><%= @blog.title %></h1>
   <em><%= @blog.text %><em>
   <div>
+     <% if can? :destroy, @blog %><%= link_to 'Delete', destroy_blog_path(@user.id, @blog.id, @comment_id) %>
+     <% end %>
+  </div>
+  <div>
     <%= render partial: "shared/comment_total", locals: { comment_total: @blog.comments.size } %>,
     <%= render partial: "shared/like_total", locals: {like_total: @blog.likes.size} %>
   </div>

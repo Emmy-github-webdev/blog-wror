@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
+
 
   def new
     @comment = Comment.new
@@ -17,11 +17,15 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:comment_id])
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to user_blogs_path(@blog.user.id), notice: 'Comment item was successfully removed.' }
+    @blog = Blog.find_by_id(params[:blog_id])
+    @user = User.find_by_id(params[:user_id])
+    @comment = @blog.Comments.find(params[:comment_id])
+    if @comment.destroy
+    flash[:success] = 'Comment item was successfully removed.'
+    else
+      flash[:error] = 'Try again.'
     end
+    redirect_to "/users/#{@user.id}/blogs"
   end
 
   private
