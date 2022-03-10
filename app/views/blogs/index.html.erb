@@ -3,7 +3,10 @@
   <div><%= link_to 'Add A Post', user_new_blog_path %></div>
   <p><%= flash[:notice] %></p>
   <div class="user-show-section">
-    <div class="card-img"><%= image_tag @user.photo, class: 'img' %></div>
+ 
+    <div class="card-img">
+    <%= image_tag (@user.photo,( alt: 'Image'), class: 'img' %>
+    </div>
     <div class="card-body">
       <h2  class="card-title"><%= @user.name %></h2>
       <p class="card-post">Posts: <%= @user.postsCounter %></p>
@@ -20,5 +23,8 @@
    </div>
     <div class="recent-comments"><% blog.recent_comment%></div>
   <% end %>
+
+  <div>
+  </div>
 </div>
 
