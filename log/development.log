@@ -16071,3 +16071,281 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 45ms (Views: 28.2ms | ActiveRecord: 3.7ms | Allocations: 4416)
 
 
+Started GET "/users/2" for 127.0.0.1 at 2022-03-10 09:57:20 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (2.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mComment Count (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  [1m[36mLike Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  Rendered collection of blogs/_blog.html.erb [1 times] (Duration: 26.5ms | Allocations: 1716)
+  Rendered users/show.html.erb within layouts/application (Duration: 46.1ms | Allocations: 2574)
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | Allocations: 4623)
+Completed 200 OK in 252ms (Views: 57.5ms | ActiveRecord: 51.3ms | Allocations: 9431)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-03-10 09:57:21 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mComment Count (4.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  [1m[36mLike Count (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.4ms | Allocations: 18)
+  Rendered collection of blogs/_blog.html.erb [1 times] (Duration: 42.6ms | Allocations: 1716)
+  Rendered users/show.html.erb within layouts/application (Duration: 60.9ms | Allocations: 2572)
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | Allocations: 4624)
+Completed 200 OK in 128ms (Views: 77.0ms | ActiveRecord: 14.5ms | Allocations: 6962)
+
+
+Started GET "/users/4/blogs/2" for 127.0.0.1 at 2022-03-10 09:57:22 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 54ms (ActiveRecord: 3.7ms | Allocations: 2930)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=2):
+  
+activerecord (7.0.2.2) lib/active_record/core.rb:284:in `find'
+cancancan (3.3.0) lib/cancan/model_adapters/abstract_adapter.rb:22:in `find'
+cancancan (3.3.0) lib/cancan/controller_resource_finder.rb:13:in `find_resource'
+cancancan (3.3.0) lib/cancan/controller_resource_loader.rb:110:in `load_resource_instance'
+cancancan (3.3.0) lib/cancan/controller_resource_loader.rb:18:in `load_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:33:in `load_and_authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:467:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:467:in `block in make_lambda'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for 127.0.0.1 at 2022-03-10 09:57:39 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (1.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mComment Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  [1m[36mLike Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 2.1ms | Allocations: 18)
+  Rendered collection of blogs/_blog.html.erb [1 times] (Duration: 27.5ms | Allocations: 1716)
+  Rendered users/show.html.erb within layouts/application (Duration: 38.5ms | Allocations: 2572)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 4636)
+Completed 200 OK in 87ms (Views: 59.2ms | ActiveRecord: 8.5ms | Allocations: 6975)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-10 09:57:44 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 2762)
+Completed 200 OK in 65ms (Views: 45.0ms | ActiveRecord: 2.8ms | Allocations: 4437)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-10 09:57:44 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 2761)
+Completed 200 OK in 50ms (Views: 29.8ms | ActiveRecord: 5.8ms | Allocations: 4428)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-10 09:57:47 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (2.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mComment Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.4ms | Allocations: 18)
+  [1m[36mLike Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  [1m[36mComment Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mLike Count (14.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered collection of blogs/_blog.html.erb [2 times] (Duration: 51.1ms | Allocations: 3416)
+  Rendered users/show.html.erb within layouts/application (Duration: 60.6ms | Allocations: 4286)
+  Rendered layout layouts/application.html.erb (Duration: 71.2ms | Allocations: 6335)
+Completed 200 OK in 104ms (Views: 53.6ms | ActiveRecord: 23.4ms | Allocations: 8676)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-03-10 09:57:47 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Load (4.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mComment Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.3ms | Allocations: 18)
+  [1m[36mLike Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.2ms | Allocations: 18)
+  [1m[36mComment Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/_blog.html.erb:6
+  Rendered shared/_comment_total.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mLike Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/_blog.html.erb:7
+  Rendered shared/_like_total.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered collection of blogs/_blog.html.erb [2 times] (Duration: 37.3ms | Allocations: 3418)
+  Rendered users/show.html.erb within layouts/application (Duration: 48.3ms | Allocations: 4288)
+  Rendered layout layouts/application.html.erb (Duration: 63.6ms | Allocations: 6337)
+Completed 200 OK in 97ms (Views: 55.6ms | ActiveRecord: 13.8ms | Allocations: 8663)
+
+
+Started GET "/users/3/blogs/1" for 127.0.0.1 at 2022-03-10 09:57:50 +0100
+Processing by BlogsController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Load (1.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:10:in `show'
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 AND "blogs"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mComment Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/show.html.erb:9
+  Rendered shared/_comment_total.html.erb (Duration: 0.4ms | Allocations: 21)
+  [1m[36mLike Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/show.html.erb:10
+  Rendered shared/_like_total.html.erb (Duration: 0.2ms | Allocations: 19)
+  [1m[36mLike Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."blog_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["blog_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_like_shared.html.erb:3
+  Rendered shared/_like_shared.html.erb (Duration: 32.6ms | Allocations: 1517)
+  [1m[36mCACHE Comment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/show.html.erb:17
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  ↳ app/views/shared/_comment_shared.html.erb:1
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment_shared.html.erb:4
+  Rendered shared/_comment_shared.html.erb (Duration: 61.3ms | Allocations: 7130)
+  Rendered shared/_new_comment.html.erb (Duration: 49.8ms | Allocations: 690)
+  Rendered blogs/show.html.erb within layouts/application (Duration: 180.3ms | Allocations: 12868)
+  Rendered layout layouts/application.html.erb (Duration: 198.8ms | Allocations: 15101)
+Completed 200 OK in 346ms (Views: 180.7ms | ActiveRecord: 29.6ms | Allocations: 26790)
+
+
