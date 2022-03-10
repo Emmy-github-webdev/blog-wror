@@ -3,8 +3,8 @@ require 'user'
 module UserMocks
   def create_users
     names = [
-      { name: 'Emmanuel', bio: "Mathematics teacher", postsCounter:5 , email: 'emmanuel@2.com', role: 'admin' },
-      { name: 'Ogah', bio: "English teacher", postsCounter: 5, email: 'ogah@2.com', role: 'admin' }
+      { name: 'Emmanuel', bio: 'Mathematics teacher', postsCounter: 5, email: 'emmanuel@2.com', role: 'admin' },
+      { name: 'Ogah', bio: 'English teacher', postsCounter: 5, email: 'ogah@2.com', role: 'admin' }
     ]
     (0..1).each do |i|
       user = User.new(names[i])
@@ -20,7 +20,7 @@ module UserMocks
     users.each do |user|
       (1..5).each do |j|
         Blog.create(title: "Post number: #{j}", text: "This is post number: #{j}", commentsCounter: 0,
-          likesCounter: 0, user_id: user.id)
+                    likesCounter: 0, user_id: user.id)
       end
     end
     Blog.all

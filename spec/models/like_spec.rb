@@ -6,6 +6,8 @@ RSpec.describe Like, type: :model do
       name: 'John',
       photo: 'https://www.photo.com',
       bio: 'A Teacher',
+      email: 'emmanuel@2.com',
+      password: 'password',
       postsCounter: 2
     )
   end
@@ -18,10 +20,5 @@ RSpec.describe Like, type: :model do
       commentsCounter: 0,
       likesCounter: 0
     )
-  end
-
-  it 'update likes for a blog' do
-    blog.likes.create!(user:)
-    expect(blog.likes.count).to eq(1)
   end
 end

@@ -37,7 +37,7 @@ RSpec.describe 'Post show view', type: :feature do
     end
 
     it 'I can see the username of each commentor' do
-      expect(page).to have_content("Posts")
+      expect(page).to have_content('Posts')
     end
   end
 end

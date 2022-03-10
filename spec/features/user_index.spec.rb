@@ -40,7 +40,7 @@ RSpec.feature 'user index view', type: :feature do
   context 'User interacton of profile' do
     it "When I click on a user, I am redirected to that user's show page" do
       expect(page).to have_content 'Posts'
-      expect(page).to have_content "All users blog"
+      expect(page).to have_content 'All users blog'
     end
   end
 end

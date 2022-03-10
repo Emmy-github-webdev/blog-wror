@@ -15,7 +15,6 @@ RSpec.describe 'user show view', type: :feature do
   end
 
   context 'Elements on page show' do
-
     it 'Should display User\'s name' do
       expect(page).to have_content(@users.first.name)
     end
@@ -27,7 +26,6 @@ RSpec.describe 'user show view', type: :feature do
     it 'Should display user\'s bio' do
       expect(page).to have_content 'All users blog'
     end
-
   end
 
   context 'User interaction of profile' do
