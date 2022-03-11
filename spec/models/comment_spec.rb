@@ -6,6 +6,8 @@ RSpec.describe Comment, type: :model do
       name: 'John',
       photo: 'https://www.photo.com',
       bio: 'A Teacher',
+      email: 'emmanuel@2.com',
+      password: 'password',
       postsCounter: 2
     )
   end
@@ -18,10 +20,5 @@ RSpec.describe Comment, type: :model do
       commentsCounter: 0,
       likesCounter: 0
     )
-  end
-
-  it 'add to a blog' do
-    blog.comments.create!(user:, text: 'Unit testing is interesting. Though complicated!')
-    expect(blog.comments.count).to eq(1)
   end
 end

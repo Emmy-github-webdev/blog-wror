@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   # delete 'users/:user_id/blogs/:blog_id/comments/:comment_id', to: 'comments#destroy', as: 'user_comment_delete'
   # delete 'users/:user_id/blogs/:blog_id', to: 'blogs#destroy', as: 'user_post_delete'
   root 'users#index'
+
+  get '/api/blogs', to: 'api#list_posts'
+  get '/api/blogs/:blog_id/comments', to: 'api#list_comments'
+  post '/api/blogs/comment', to: 'api#add_comment'
 end
