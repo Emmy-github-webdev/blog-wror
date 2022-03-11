@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get '/api/blogs', to: 'api#list_posts'
-  get  '/api/blogs/:blog_id/comments', to: 'api#list_comments'
+  get '/api/blogs/:blog_id/comments', to: 'api#list_comments'
   post '/api/blogs/comment', to: 'api#add_comment'
 end

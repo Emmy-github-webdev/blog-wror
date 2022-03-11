@@ -16538,3 +16538,12 @@ Processing by ApiController#list_posts as HTML
 Completed 200 OK in 357ms (Views: 54.3ms | ActiveRecord: 56.7ms | Allocations: 18339)
 
 
+Started GET "/api/blogs/1/comments" for 127.0.0.1 at 2022-03-11 18:50:12 +0100
+Processing by ApiController#list_comments as HTML
+  Parameters: {"blog_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (32.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  ↳ app/controllers/api_controller.rb:9:in `list_comments'
+Completed 200 OK in 209ms (Views: 22.2ms | ActiveRecord: 46.4ms | Allocations: 13686)
+
+

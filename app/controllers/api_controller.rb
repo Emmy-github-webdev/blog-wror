@@ -23,6 +23,4 @@ class ApiController < ApplicationController
       render json: 'Cannot add comment! Try again'
     end
   end
-  
-  
 end
