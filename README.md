@@ -23,6 +23,15 @@ To get a local copy up and running follow these simple example steps.
   - bundle install.
   - rails s
 
+## Setup the local host for the database
+- vim config/databse.yml
+- Press i to insert data
+- Under pool, add host: localhost username: database_username password: password_for_database_username
+- Press ESc on your keyboard
+- Type :wq to save and quite
+- On the ternimal, type "rails db:create" Enter return key
+- Type "rails db:migrate" Enater return key
+
 ## Usage
     1.open the project with a text editor
 
